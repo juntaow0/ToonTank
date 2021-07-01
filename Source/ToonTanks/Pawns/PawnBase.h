@@ -17,10 +17,12 @@ public:
 	// Sets default values for this pawn's properties
 	APawnBase();
 
-private:
+protected:
 	// for collision
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))			
 	UCapsuleComponent* CapsuleComp = nullptr;
+
+private:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
 	UStaticMeshComponent* BaseMesh = nullptr;
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
