@@ -22,6 +22,12 @@ protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))			
 	UCapsuleComponent* CapsuleComp = nullptr;
 
+	void RotateTurretFunction(FVector LookAtTarget);
+	
+	void Fire();
+
+	virtual void HandleDestruction();
+
 private:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
 	UStaticMeshComponent* BaseMesh = nullptr;
