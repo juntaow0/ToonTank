@@ -3,6 +3,7 @@
 
 #include "PawnBase.h"
 #include "Components/CapsuleComponent.h"
+#include "../Actors/ProjectileBase.h"
 
 // Sets default values
 APawnBase::APawnBase()
@@ -35,7 +36,10 @@ void APawnBase::RotateTurretFunction(FVector LookAtTarget)
 
 void APawnBase::Fire() 
 {
-	
+	if (ProjectileClass){
+		AProjectileBase * TempProjectile = GetWorld()->SpawnActor<AProjectileBase>(ProjectileClass,ProjectileSpawnPoint->GetComponentLocation(),TurretMesh->GetComponentRotation());
+		TempProjectile->SetOwner(this);
+	}
 }
 
 void APawnBase::HandleDestruction() 
