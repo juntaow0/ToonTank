@@ -4,6 +4,7 @@
 #include "PawnBase.h"
 #include "Components/CapsuleComponent.h"
 #include "../Actors/ProjectileBase.h"
+#include "../Components/HealthComponent.h"
 
 // Sets default values
 APawnBase::APawnBase()
@@ -22,6 +23,8 @@ APawnBase::APawnBase()
 
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
 	ProjectileSpawnPoint->SetupAttachment(TurretMesh);
+
+	HealthComp = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
 }
 
 void APawnBase::RotateTurretFunction(FVector LookAtTarget) 

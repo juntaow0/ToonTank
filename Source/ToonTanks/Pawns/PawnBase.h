@@ -8,6 +8,7 @@
 
 class UCapsuleComponent;
 class AProjectileBase;
+class UHealthComponent;
 
 UCLASS()
 class TOONTANKS_API APawnBase : public APawn
@@ -17,17 +18,14 @@ class TOONTANKS_API APawnBase : public APawn
 public:
 	// Sets default values for this pawn's properties
 	APawnBase();
+	virtual void HandleDestruction();
 
 protected:
 	// for collision
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))			
 	UCapsuleComponent* CapsuleComp = nullptr;
-
 	void RotateTurretFunction(FVector LookAtTarget);
-	
 	void Fire();
-
-	virtual void HandleDestruction();
 
 private:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
@@ -36,7 +34,8 @@ private:
 	UStaticMeshComponent* TurretMesh = nullptr;
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
 	USceneComponent* ProjectileSpawnPoint = nullptr;
-	
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly,Category="Components", meta=(AllowPrivateAccess="true"))
+	UHealthComponent* HealthComp = nullptr;
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Projectile Type", meta=(AllowPrivateAccess="true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
 };

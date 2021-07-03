@@ -16,7 +16,7 @@ class TOONTANKS_API APawnTurret : public APawnBase
 public:
 	// Sets default values for this pawn's properties
 	APawnTurret();
-
+	virtual void HandleDestruction() override;
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -24,7 +24,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	virtual void HandleDestruction() override;
+	
 
 private:
 	void CheckFireCondition();
