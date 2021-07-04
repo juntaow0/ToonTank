@@ -40,4 +40,8 @@ private:
 	TSubclassOf<AProjectileBase> ProjectileClass;
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Effects", meta=(AllowPrivateAccess="true"))
 	UParticleSystem* DeathParticle = nullptr;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Effects", meta=(AllowPrivateAccess="true"))
+	USoundBase* DestructionSound = nullptr;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="Effects", meta=(AllowPrivateAccess="true"))
+	TSubclassOf<UMatineeCameraShake> DeathShake;
 };

@@ -40,8 +40,15 @@ private:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Effects", meta=(AllowPrivateAccess="true"))
 	UParticleSystem* HitParticle = nullptr;
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Effects", meta=(AllowPrivateAccess="true"))
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="Effects", meta=(AllowPrivateAccess="true"))
 	UParticleSystemComponent* TrailParticle = nullptr;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="Effects", meta=(AllowPrivateAccess="true"))
+	USoundBase* HitSound = nullptr;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="Effects", meta=(AllowPrivateAccess="true"))
+	USoundBase* LaunchSound = nullptr;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite ,Category="Effects", meta=(AllowPrivateAccess="true"))
+	TSubclassOf<UMatineeCameraShake> HitShake;
 
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
