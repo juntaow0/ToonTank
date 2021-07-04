@@ -38,4 +38,6 @@ private:
 	UHealthComponent* HealthComp = nullptr;
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Projectile Type", meta=(AllowPrivateAccess="true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Effects", meta=(AllowPrivateAccess="true"))
+	UParticleSystem* DeathParticle = nullptr;
 };

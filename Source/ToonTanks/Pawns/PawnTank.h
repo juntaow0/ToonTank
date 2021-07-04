@@ -22,6 +22,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void HandleDestruction() override;
+	bool GetIsPlayerAlive();
 
 protected:
 	// Called when the game starts or when spawned
@@ -41,6 +42,8 @@ private:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="Movement", meta=(AllowPrivateAccess="true"))
 	float RotateSpeed = 100.f;
 
+	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, meta=(AllowPrivateAccess="true"))
+	bool bIsPlayerAlive = true;
 	APlayerController* PlayerControllerRef =nullptr;
 
 	void CalculateMoveInput(float Value);

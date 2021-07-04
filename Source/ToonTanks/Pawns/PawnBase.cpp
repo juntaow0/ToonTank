@@ -5,6 +5,7 @@
 #include "Components/CapsuleComponent.h"
 #include "../Actors/ProjectileBase.h"
 #include "../Components/HealthComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APawnBase::APawnBase()
@@ -47,7 +48,7 @@ void APawnBase::Fire()
 
 void APawnBase::HandleDestruction() 
 {
-	
+	UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation());
 }
 
 
